@@ -7,6 +7,7 @@ public class PlaceControl : MonoBehaviour
     RaycastHit hit;
     Vector3 movement;
     public GameObject prefab;
+    [SerializeField] AudioSource fxMaster;
     
     // Start is called before the first frame update
     void Start()
@@ -32,9 +33,10 @@ public class PlaceControl : MonoBehaviour
         {
             Instantiate(prefab, transform.position, transform.rotation);
             Destroy(gameObject);
+            fxMaster.Play();
         }
 
-            if (Input.GetMouseButton(2)) {
+            if (Input.GetMouseButton(1)) {
             Destroy(gameObject);
         }
     }
