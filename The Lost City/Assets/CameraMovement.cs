@@ -8,8 +8,9 @@ public class CameraMovement : MonoBehaviour
     float zoomSpeed = 10.0f;
     float rotationSpeed = 0.1f;
 
-    float maxHgh = 40f;
-    float minHgh = 4f;
+    float maxHgh = 75f;
+    float minHgh = 30f;
+    
 
     Vector2 p1;
     Vector2 p2;
@@ -42,7 +43,8 @@ public class CameraMovement : MonoBehaviour
         else if ((transform.position.y <= minHgh) && (scrollsp < 0))
         {
             scrollsp = 0;
-        }
+        } 
+        
 
         if ((transform.position.y + scrollsp) > maxHgh) { 
             scrollsp = maxHgh - transform.position.y;
