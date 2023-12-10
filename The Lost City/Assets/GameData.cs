@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class GameData : MonoBehaviour
 {
@@ -12,10 +14,22 @@ public class GameData : MonoBehaviour
     public int _population;
     public int _water;
     public static string _cityName;
+    public bool isLimit = false;
+    public GameObject signalpanel;
+    
     private PlaceControl _control;
     public GameObject zabor, butka1, butka2, zdanye, battery, trash, signal_station, finalbutton;
 
-    
+    public void onWin()
+    {
+        SceneManager.LoadScene(3);
+        _food = 0;
+        _wood = 0;
+        _stone = 0;
+        _population = 0;
+        _water = 0;
+
+    }
 
      public TextMeshProUGUI _foodText;
      public TextMeshProUGUI _woodText;
@@ -37,12 +51,14 @@ public class GameData : MonoBehaviour
     {
         _cityText.text = _cityName.ToString();
     }
+
+    
     private void Update()
     {
         if(Input.GetKey(KeyCode.Escape)) 
         { 
             Time.timeScale = 0f;
-            pausepanel.SetActive(true);
+            
         }
         if(Input.GetKeyUp(KeyCode.F3))
         {
@@ -68,35 +84,51 @@ public class GameData : MonoBehaviour
         if(_population == 10)
         {
             zabor.SetActive(true);
+            
         }
         if(_population == 50) 
         { 
             butka1.SetActive(true);
+            
         }
         if(_population == 100)
         {
             butka2.SetActive(true);
+            
         }
         if (_population == 200)
         {
             zdanye.SetActive(true);
+            
         }
         if(_population == 350)
         {
             zdanye.SetActive(true);
+            
         }
         if(_population == 500)
         {
             battery.SetActive(true);
+            
         }
         if(_population == 1000)
         {
             trash.SetActive(true);
+            
+            isLimit = true;
         }
         if( _population >= 2500)
         {
             signal_station.SetActive(true);
+            
             finalbutton.SetActive(true);
+        }
+        if(isLimit)
+        {
+            if ((_food == 0) || (_wood == 0) || (_stone == 0) || (_water == 0))
+            {
+                SceneManager.LoadScene(4);
+            }
         }
     }
 
