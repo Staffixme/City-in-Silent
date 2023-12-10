@@ -464,6 +464,8 @@ GameObject:
   - component: {fileID: 3526750182860642848}
   - component: {fileID: -4406373774656452054}
   - component: {fileID: -7822785906004276236}
+  - component: {fileID: 5408937903928828077}
+  - component: {fileID: 8867033470487139255}
   m_Layer: 0
   m_Name: ForestHome
   m_TagString: Building
@@ -611,6 +613,54 @@ MonoBehaviour:
   _neededStone: 0
   _neededWater: 0
   _gameData: {fileID: 0}
+--- !u!54 &5408937903928828077
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5898835378472449754}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &8867033470487139255
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5898835378472449754}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 10.510626, y: 5.5250473, z: 6.69105}
+  m_Center: {x: 1.4360943, y: 2.2625237, z: 1.5214298}
 --- !u!1 &6131584985636408909
 GameObject:
   m_ObjectHideFlags: 0

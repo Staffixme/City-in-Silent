@@ -13,10 +13,14 @@ public class melnicaData : BuildingData
     public override IEnumerator RequestingResources()
     {
         yield return new WaitForSeconds(_requestTime);
-        _gameData._food += _neededFood;
-        _gameData._wood -= _neededWood;
-        _gameData._stone -= _neededStone;
-        _gameData._water -= _neededWater;
+        if ((_water <= _gameData._water) && (_wood <= _gameData._wood) && (_stone <= _gameData._stone))
+        {
+            _gameData._food += _neededFood;
+            _gameData._wood -= _neededWood;
+            _gameData._stone -= _neededStone;
+            _gameData._water -= _neededWater;
+        }
+        
 
         StartCoroutine(RequestingResources());
 

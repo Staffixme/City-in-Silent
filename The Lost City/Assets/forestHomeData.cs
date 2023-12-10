@@ -20,8 +20,12 @@ public class forestHomeData : BuildingData
     public override IEnumerator RequestingResources()
     {
         yield return new WaitForSeconds(_requestTime);
-        _gameData._food -= _neededFood;
-        _gameData._wood += _neededWood;
+        if ((_Food <= _gameData._food) && (_water <= _gameData._water) && (_stone <= _gameData._stone))
+        {
+            _gameData._food -= _neededFood;
+            _gameData._wood += _neededWood;
+        }
+            
         
         StartCoroutine(RequestingResources());
 

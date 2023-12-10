@@ -53,11 +53,11 @@ public class PlaceControl : MonoBehaviour
 
         if(Input.GetKey(KeyCode.Q))
         {
-            transform.Rotate(0,0.1f,0);
+            transform.Rotate(0,0.2f,0);
         }
         if (Input.GetKey(KeyCode.E))
         {
-            transform.Rotate(0, -0.1f, 0);
+            transform.Rotate(0, -0.2f, 0);
         }
         if (Input.GetMouseButton(0))
         {

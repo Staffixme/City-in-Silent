@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    float speed = 0.06f;
+    float speed = 0.1f;
     float zoomSpeed = 10.0f;
     float rotationSpeed = 0.1f;
 
@@ -24,12 +24,12 @@ public class CameraMovement : MonoBehaviour
     {
 
         if(Input.GetKey(KeyCode.LeftShift)) {
-            speed = 0.06f;
+            speed = 0.1f;
             zoomSpeed = 20f;
         }
         else
         {
-            speed = 0.035f;
+            speed = 0.05f;
             zoomSpeed = 10f;
         }
         float hsp = speed * Input.GetAxis("Horizontal");
