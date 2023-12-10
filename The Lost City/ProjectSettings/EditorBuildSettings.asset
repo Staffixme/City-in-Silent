@@ -17,7 +17,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/CutsceneWin/Win.unity
     guid: 0afab91741527774da99d343cbc662ec
-  - enabled: 1
-    path: Assets/CutsceneLose/Lose.unity
-    guid: 2b94d338f04c1f14d8191943c36841cf
   m_configObjects: {}

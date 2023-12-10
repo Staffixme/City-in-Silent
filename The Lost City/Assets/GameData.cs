@@ -55,9 +55,14 @@ public class GameData : MonoBehaviour
     
     private void Update()
     {
+        if(_water<0)
+        {
+            _water = 0;
+        }
         if(Input.GetKey(KeyCode.Escape)) 
         { 
             Time.timeScale = 0f;
+            pausepanel.SetActive(true);
             
         }
         if(Input.GetKeyUp(KeyCode.F3))
@@ -123,13 +128,7 @@ public class GameData : MonoBehaviour
             
             finalbutton.SetActive(true);
         }
-        if(isLimit)
-        {
-            if ((_food == 0) || (_wood == 0) || (_stone == 0) || (_water == 0))
-            {
-                SceneManager.LoadScene(4);
-            }
-        }
+        
     }
 
     

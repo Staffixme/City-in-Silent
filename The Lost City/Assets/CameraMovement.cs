@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    float speed = 0.1f;
+    
+    float speed;
     float zoomSpeed = 10.0f;
     float rotationSpeed = 0.1f;
+
 
     float maxHgh = 75f;
     float minHgh = 30f;
@@ -16,20 +18,21 @@ public class CameraMovement : MonoBehaviour
     Vector2 p2;
     void Start()
     {
-        
+        speed = cameraSensivity.sens;
     }
+    
 
     // Update is called once per frame
     void Update()
     {
 
         if(Input.GetKey(KeyCode.LeftShift)) {
-            speed = 0.1f;
+            speed = cameraSensivity.sens;
             zoomSpeed = 20f;
         }
         else
         {
-            speed = 0.05f;
+            speed = cameraSensivity.sens / 2;
             zoomSpeed = 10f;
         }
         float hsp = speed * Input.GetAxis("Horizontal");
